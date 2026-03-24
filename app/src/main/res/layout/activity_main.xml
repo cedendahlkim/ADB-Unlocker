@@ -1,56 +1,159 @@
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/md_theme_light_primaryContainer">
 
+    <!-- Header -->
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:textStyle="bold"
+        android:textColor="@color/md_theme_light_primary"
+        android:background="@drawable/rounded_background"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="ADB Unlocker" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/statusTextView"
+    <!-- Status Display -->
+    <ScrollView
+        android:id="@+id/statusScrollView"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
-        android:text="@string/device_not_connected"
-        android:textAlignment="center"
-        android:textSize="18sp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/status_background"
+        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonsLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titleTextView"
-        tools:text="Enhet ej ansluten" />
+        app:layout_constraintTop_toBottomOf="@id/titleTextView">
 
-    <Button
-        android:id="@+id/unlockButton"
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_message"
+            android:textSize="14sp"
+            android:textColor="@color/md_theme_light_onPrimaryContainer"
+            android:fontFamily="monospace"
+            android:lineSpacingExtra="2dp"
+            android:longClickable="true" />
+
+    </ScrollView>
+
+    <!-- Buttons Container -->
+    <LinearLayout
+        android:id="@+id/buttonsLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/unlock"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/statusTextView"
-        tools:text="Lås upp" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <Button
-        android:id="@+id/checkConnectionButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/check_connection"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/unlockButton"
-        tools:text="Kontrollera anslutning" />
+        <!-- Primary Actions -->
+        <Button
+            android:id="@+id/checkDeviceButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/check_connection"
+            android:textSize="16sp"
+            android:backgroundTint="@color/md_theme_light_primary"
+            android:textColor="@color/md_theme_light_onPrimary"
+            style="@style/Widget.Material3.Button" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/unlockButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="@string/unlock"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:textColor="@android:color/white"
+                style="@style/Widget.Material3.Button" />
+
+            <Button
+                android:id="@+id/resetPinButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="@string/reset_pin"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textColor="@android:color/white"
+                style="@style/Widget.Material3.Button" />
+
+        </LinearLayout>
+
+        <!-- Secondary Actions -->
+        <Button
+            android:id="@+id/bypassFrpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/bypass_frp"
+            android:backgroundTint="@android:color/holo_purple"
+            android:textColor="@android:color/white"
+            style="@style/Widget.Material3.Button" />
+
+        <Button
+            android:id="@+id/enableUsbDebugButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="@string/enable_usb_debug"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:textColor="@android:color/white"
+            style="@style/Widget.Material3.Button" />
+
+        <!-- Advanced Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bypassFrpOtgButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:text="@string/bypass_frp_otg"
+                android:backgroundTint="@android:color/darker_gray"
+                android:textColor="@android:color/white"
+                style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            <Button
+                android:id="@+id/runExploitScriptButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:text="@string/run_exploit"
+                android:backgroundTint="@android:color/black"
+                android:textColor="@android:color/white"
+                style="@style/Widget.Material3.Button" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

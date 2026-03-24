@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="statusText" type="id">statusText</item>
-    <item name="unlockButton" type="id">unlockButton</item>
-    <item name="checkDeviceButton" type="id">checkDeviceButton</item>
-    <item name="resetPinButton" type="id">resetPinButton</item>
-    <item name="bypassFrpButton" type="id">bypassFrpButton</item>
-    <item name="enableUsbDebugButton" type="id">enableUsbDebugButton</item>
-    <item name="bypassFrpOtgButton" type="id">bypassFrpOtgButton</item>
-    <item name="runExploitScriptButton" type="id">runExploitScriptButton</item>
+    <item name="statusText" type="id"/>
+    <item name="unlockButton" type="id"/>
+    <item name="checkDeviceButton" type="id"/>
+    <item name="resetPinButton" type="id"/>
+    <item name="bypassFrpButton" type="id"/>
+    <item name="enableUsbDebugButton" type="id"/>
+    <item name="bypassFrpOtgButton" type="id"/>
+    <item name="runExploitScriptButton" type="id"/>
 </resources>

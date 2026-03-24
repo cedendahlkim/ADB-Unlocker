@@ -1,12 +1,44 @@
-
 <resources>
-    <!-- App Name -->
     <string name="app_name" translatable="false">ADB Unlocker</string>
-
-    <!-- Connection Status -->
-    <string name="device_not_connected">Device not connected</string>
-    <string name="check_connection">Check connection</string>
-
-    <!-- Actions -->
-    <string name="unlock">Unlock</string>
+    <string name="device_not_connected">Ingen enhet ansluten</string>
+    <string name="device_connected">Enhet ansluten</string>
+    <string name="check_connection">Kontrollera anslutning</string>
+    <string name="unlock">Lås upp skärm</string>
+    <string name="reset_pin">Återställ PIN</string>
+    <string name="bypass_frp">Bypass FRP</string>
+    <string name="enable_usb_debug">Aktivera USB-felsökning</string>
+    <string name="bypass_frp_otg">Bypass FRP (OTG)</string>
+    <string name="run_exploit">Kör exploit</string>
+    <string name="status_ready">Klar</string>
+    <string name="error_adb_not_found">ADB inte installerat</string>
+    <string name="error_no_device">Ingen enhet hittades</string>
+    <string name="error_root_required">Kräver root-åtkomst</string>
+    <string name="success_unlock">Skärmlås borttaget</string>
+    <string name="success_pin_reset">PIN återställd</string>
+    <string name="success_frp_bypass">FRP bypassad</string>
+    <string name="confirm_title">Bekräfta åtgärd</string>
+    <string name="confirm_unlock">Detta tar bort skärmlåset. Fortsätta?</string>
+    <string name="confirm_reset">Detta återställer allt lösenord. Fortsätta?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string name="running">Kör...</string>
+    <string name="device_info" formatted="false">Enhet: %s | Android: %s | Modell: %s</string>
+    <string name="root_detected">Root upptäckt</string>
+    <string name="root_not_detected">Root ej upptäckt (vissa funktioner kan misslyckas)</string>
+    <string name="checking_device">Kontrollerar enhet...</string>
+    <string name="device_compatibility" formatted="false">Kompatibilitet: %s</string>
+    <string name="compatible">Kompatibel</string>
+    <string name="not_compatible">Ej kompatibel</string>
+    <string name="partial_compatibility">Begränsad kompatibilitet</string>
+    
+    <!-- Nya strings för avancerade features -->
+    <string name="advanced_tools">Avancerade verktyg</string>
+    <string name="system_dump">System information dump</string>
+    <string name="battery_health">Battery health check</string>
+    <string name="network_config">Network configuration</string>
+    <string name="installed_apps">Installerade appar</string>
+    <string name="custom_command">Custom ADB command</string>
+    <string name="copy_to_clipboard">Kopiera till urklipp</string>
+    <string name="operation_logged">Operation loggad</string>
+    <string name="welcome_message">🚀 ADB Unlocker v1.0\n⭐ 42+ stjärnor på GitHub\n👥 Community-driven projekt\n\nTryck "Kontrollera anslutning" för att börja</string>
 </resources>
